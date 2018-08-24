@@ -16,9 +16,9 @@ Route::get('/', 'Application\IndexController@indexAction');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 //Routes for users authenticated
 Route::group(array('prefix' => 'user', 'middleware' => "auth"), function () {
-
+    Route::get('', 'User\IndexController@indexAction');
+    Route::get('create-establishment', array('as' => 'creation-etablissement', 'uses' => 'User\IndexController@createEstablishmentPageAction'));
+    Route::post('create-establishment', array('as' => 'creation-etablissement', 'uses' => 'User\IndexController@createEstablishmentAction'));
 });
