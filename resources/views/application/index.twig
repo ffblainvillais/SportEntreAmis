@@ -10,15 +10,8 @@
 
                     <div class="panel-body">
 
-                        <h2>Espace utilisateur</h2>
-
-                        <a href="{{ url('logout') }}"><span class="btn btn-danger">Deconnexion</span></a>
-
-                        {{ dump(auth.user()) }}
-                        {% if auth.user() %}
-                            pas co
-                        {% else %}
-                            <h1>ok{{ dump(auth)}}ok</h1>
+                        {% if auth_user() %}
+                           Bonjour {{ auth_user().name }}
                         {% endif %}
 
                     </div>

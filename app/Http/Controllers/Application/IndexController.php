@@ -19,7 +19,6 @@ class IndexController extends Controller
 
     public function indexAction()
     {
-        //return view('welcome');
         return view('application/index');
     }
 }
